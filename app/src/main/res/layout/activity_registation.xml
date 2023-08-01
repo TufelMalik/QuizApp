@@ -60,7 +60,6 @@
             android:drawableTint="@color/white"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/dark_main_color"
             android:textColorHint="@color/dark_main_color" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -84,7 +83,6 @@
             android:drawableTint="@color/white"
             android:hint="Full Name"
             android:inputType="text"
-            android:textColor="@color/dark_main_color"
             android:textColorHint="@color/dark_main_color" />
 
     </com.google.android.material.textfield.TextInputLayout>
