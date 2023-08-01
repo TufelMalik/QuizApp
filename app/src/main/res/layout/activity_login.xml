@@ -11,7 +11,8 @@
     <TextView
         android:id="@+id/textView6"
         android:layout_width="349dp"
-        android:layout_height="346dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="90dp"
         android:background="@drawable/corner"
         android:backgroundTint="@color/dark_main_color"
         app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -29,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.536">
+        app:layout_constraintVertical_bias="0.57">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="240dp"
@@ -51,7 +52,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427">
+        app:layout_constraintVertical_bias="0.47">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="240dp"
@@ -64,30 +65,15 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/faustina_medium"
-        android:text="Welcome Back"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.295" />
-
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnLogin"
         android:layout_width="67dp"
         android:layout_height="54dp"
         android:background="@drawable/ic_right_arrow"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
         app:layout_constraintHorizontal_bias="0.894"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.984" />
 
@@ -96,6 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="@drawable/up_corner"
+        android:fontFamily="@font/faustina_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -113,15 +100,14 @@
         android:id="@+id/textViedw3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="36dp"
         android:fontFamily="@font/faustina_medium"
-        android:text="Already have an account ?"
+        android:text="Create a new account?"
         android:textColor="@color/white"
         android:textSize="18sp"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -136,5 +122,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="412dp"
+        android:layout_height="262dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.84"
+        app:srcCompat="@drawable/study_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

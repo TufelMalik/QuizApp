@@ -6,10 +6,6 @@
         android:bottomRightRadius="90dp"
         />
 
-    <stroke
-        android:color="@color/dark_main_color"
-        android:width="2dp"
-        />
     <solid
         android:color="@color/dark_main_color"
         />
