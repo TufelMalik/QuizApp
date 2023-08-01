@@ -3,7 +3,6 @@ package com.tufelmalik.quizapp.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.tufelmalik.quizapp.R
 import com.tufelmalik.quizapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -13,9 +12,8 @@ class LoginActivity : AppCompatActivity() {
             binding = ActivityLoginBinding.inflate(layoutInflater)
             setContentView(binding.root)
 
-            //First change  from the college
                 binding.btnLogin.setOnClickListener {
-                    startActivity(Intent(this@LoginActivity,MainActivity::class.java))
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                 }
 
     }

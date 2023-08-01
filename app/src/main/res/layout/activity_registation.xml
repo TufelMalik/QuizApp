@@ -7,6 +7,47 @@
     android:layout_height="match_parent"
     tools:context=".ui.RegistationActivity">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:id="@+id/signUpWithGoogle"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/faustina_medium"
+            android:text="SignUp with Google"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.57" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/google_img"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.698"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:srcCompat="@drawable/google_img" />
+
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView6"
@@ -38,6 +79,7 @@
             android:drawablePadding="20dp"
             android:drawableTint="@color/white"
             android:hint="Password"
+            android:id="@+id/etPassReg"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -57,6 +99,7 @@
             android:layout_height="40dp"
             android:drawableLeft="@drawable/ic_email"
             android:drawablePadding="14dp"
+            android:id="@+id/etEmailReg"
             android:drawableTint="@color/white"
             android:hint="Email"
             android:inputType="textEmailAddress"
@@ -77,6 +120,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="240dp"
+            android:id="@+id/etNameReg"
             android:layout_height="40dp"
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="14dp"
@@ -88,7 +132,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnSignUp"
         android:layout_width="67dp"
         android:layout_height="54dp"
         android:background="@drawable/ic_right_arrow"
@@ -148,7 +192,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/profile_image_reg"
         android:layout_width="159dp"
         android:layout_height="139dp"
         android:src="@drawable/profile_person_img"
@@ -160,15 +204,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/btnSelectImage"
         android:layout_width="55dp"
         android:layout_height="48dp"
+        android:layout_marginStart="52dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/texttInputLayout"
-        app:layout_constraintEnd_toEndOf="@+id/profile_image"
-        app:layout_constraintStart_toStartOf="@+id/profile_image"
-        app:layout_constraintTop_toTopOf="@+id/profile_image"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/profile_image_reg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/profile_image_reg"
+        app:layout_constraintTop_toTopOf="@+id/profile_image_reg"
+        app:layout_constraintVertical_bias="0.973"
         app:srcCompat="@drawable/ic_add_circle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

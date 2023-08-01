@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/idNotes_Drawer"
+        android:title="Notes"
+        android:icon="@drawable/ic_notes"
+        />
+
+    <item
+        android:id="@+id/icSettings_Drawer"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings"
+        />
+
+    <item
+        android:id="@+id/idAboutUs_Drawer"
+        android:title="About Us"
+        android:icon="@drawable/ic_about_us"
+        />
+</menu>
