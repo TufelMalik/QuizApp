@@ -19,6 +19,10 @@ class RegistationActivity : AppCompatActivity() {
         }
 
 
+        binding.txtGotoLogin2.setOnClickListener {
+            startActivity(Intent(this@RegistationActivity, LoginActivity::class.java))
+        }
+
 
     }
 }

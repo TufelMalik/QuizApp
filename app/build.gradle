@@ -52,4 +52,7 @@ dependencies {
     //  BottomBar
     implementation 'com.etebarian:meow-bottom-navigation:1.2.0'
 
+    //drawer Navigation
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
