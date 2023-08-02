@@ -6,14 +6,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import com.tufelmalik.quizapp.R
 import com.tufelmalik.quizapp.databinding.ActivityMainBinding
+import nl.joery.animatedbottombar.AnimatedBottomBar
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var bottomNavigation :  MeowBottomNavigation
     private lateinit var actionBarToggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,42 +21,45 @@ class MainActivity : AppCompatActivity() {
 
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        replaceFragment(HomeFragment())
+        binding.txtHeadingMain.setTextColor(resources.getColor(R.color.gold))
         setBottomNav()
-        bottomNavClickListner()
-        setBottomNavClickListner()
-
         setDrawer()
 
 
 
     }
 
-    private fun setBottomNavClickListner() {
-        switchFragment(HomeFragment())
-        bottomNavigation.setOnClickMenuListener { model: MeowBottomNavigation.Model? ->
-            // Handle the item click event here based on the model
-            // For example, switch fragments based on the selected model
-            model?.let {
-                when (it.id) {
-                    R.id.idHome_menu -> switchFragment(HomeFragment())
-                    R.id.idLeaderBorad_menu -> switchFragment(LeaderboardFragment())
-                    R.id.idProfile_menu -> switchFragment(ProfileFragment())
-
-                    else->false
-
-                }
+    private fun setBottomNav() {
+        binding.mainBottomBar.setOnTabInterceptListener(object : AnimatedBottomBar.OnTabInterceptListener {
+            override fun onTabIntercepted(
+                lastIndex: Int,
+                lastTab: AnimatedBottomBar.Tab?,
+                newIndex: Int,
+                newTab: AnimatedBottomBar.Tab
+            ): Boolean {
+               when(newTab.id){
+                   R.id.idHome_menu->{
+                       binding.txtHeadingMain.setTextColor(resources.getColor(R.color.gold))
+                       binding.txtHeadingMain.text = getText(R.string.app_name)
+                       replaceFragment(HomeFragment())
+                   }
+                   R.id.idLeaderBorad_menu->{
+                       binding.txtHeadingMain.setTextColor(resources.getColor(R.color.white))
+                       binding.txtHeadingMain.text = getString(R.string.leader_board)
+                       replaceFragment(LeaderboardFragment())
+                   }
+                   R.id.idProfile_menu->{
+                       binding.txtHeadingMain.setTextColor(resources.getColor(R.color.white))
+                       binding.txtHeadingMain.text = getString(R.string.profile)
+                       replaceFragment(ProfileFragment())
+                   }
+                   else->false
+               }
+                return true
             }
-            // Return true if you want to consume the click event or false otherwise
-            true
-        }
+        })
 
-    }
-
-    private fun switchFragment(fragment: Fragment): Any {
-        val a = supportFragmentManager.beginTransaction()
-            .replace(R.id.main_container, fragment)
-            .commit()
-        return a
 
     }
 
@@ -72,11 +74,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setDrawerClickListner() {
-
         binding.btnDrawer.setOnClickListener {
             binding.drawerLayout.openDrawer(GravityCompat.START)
         }
-
         binding.navigationView.setNavigationItemSelectedListener {menuItems->
             when (menuItems.itemId) {
                 R.id.idNotes_Drawer -> {
@@ -96,28 +96,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setBottomNav() {
-        bottomNavigation = findViewById<MeowBottomNavigation>(R.id.bottomNav)
-        bottomNavigation.add(MeowBottomNavigation.Model(1, R.drawable.ic_home))
-        bottomNavigation.add(MeowBottomNavigation.Model(2, R.drawable.ic_leaderboard))
-        bottomNavigation.add(MeowBottomNavigation.Model(3, R.drawable.ic_person))
-        bottomNavigation.show(1)        //Bydefault set to Home
-        //  For more Detils -> https://github.com/oneHamidreza/MeowBottomNavigation
-
-    }
-
-    private fun bottomNavClickListner() {
-        bottomNavigation.setOnClickMenuListener { model: MeowBottomNavigation.Model? ->
 
 
 
-
-        }
-
-        bottomNavigation.setOnShowListener { model: MeowBottomNavigation.Model? ->
-
-
-        }
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_container, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onSupportNavigateUp(): Boolean {

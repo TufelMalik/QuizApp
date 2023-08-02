@@ -2,22 +2,44 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
+    <item
+        android:id="@+id/idSyllbus_Drawer"
+        android:title="@string/syllabus"
+        android:icon="@drawable/ic_syllabus"
+        />
+
+    <item
+        android:id="@+id/idSavedQuizs_Drawer"
+        android:title="@string/saved_quizs"
+        android:icon="@drawable/ic_saved"
+        />
 
     <item
         android:id="@+id/idNotes_Drawer"
-        android:title="Notes"
+        android:title="@string/notes"
         android:icon="@drawable/ic_notes"
         />
 
     <item
+        android:id="@+id/idShareApp_Drawer"
+        android:title="@string/share_app"
+        android:icon="@drawable/ic_share"
+        />
+
+    <item
+        android:id="@+id/idFeedBack_Drawer"
+        android:title="@string/feedback"
+        android:icon="@drawable/ic_feedback"
+        />
+    <item
         android:id="@+id/icSettings_Drawer"
-        android:title="Settings"
+        android:title="@string/settings"
         android:icon="@drawable/ic_settings"
         />
 
     <item
         android:id="@+id/idAboutUs_Drawer"
-        android:title="About Us"
+        android:title="@string/about_us"
         android:icon="@drawable/ic_about_us"
         />
 </menu>

@@ -18,8 +18,5 @@ class StartActivity : AppCompatActivity() {
             startActivity(Intent(this@StartActivity,LoginActivity::class.java))
         }
 
-        binding.txtGotoRegStart.setOnClickListener {
-            startActivity(Intent(this@StartActivity,RegistationActivity::class.java))
-        }
     }
 }
