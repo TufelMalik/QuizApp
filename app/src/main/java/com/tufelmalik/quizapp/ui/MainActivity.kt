@@ -1,11 +1,11 @@
 package com.tufelmalik.quizapp.ui
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import com.shashank.sony.fancytoastlib.FancyToast
 import com.tufelmalik.quizapp.R
 import com.tufelmalik.quizapp.databinding.ActivityMainBinding
 import nl.joery.animatedbottombar.AnimatedBottomBar
@@ -59,8 +59,6 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         })
-
-
     }
 
 
@@ -69,8 +67,6 @@ class MainActivity : AppCompatActivity() {
         binding.drawerLayout.addDrawerListener(actionBarToggle)
         actionBarToggle.syncState()
         setDrawerClickListner()
-
-
     }
 
     private fun setDrawerClickListner() {
@@ -80,15 +76,23 @@ class MainActivity : AppCompatActivity() {
         binding.navigationView.setNavigationItemSelectedListener {menuItems->
             when (menuItems.itemId) {
                 R.id.idNotes_Drawer -> {
-                    Toast.makeText(this@MainActivity,"Notes",Toast.LENGTH_SHORT).show()
+                    FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_SHORT,FancyToast.SUCCESS,false).show()
                     true
                 }
                 R.id.icSettings_Drawer -> {
-                    Toast.makeText(this@MainActivity,"Settings",Toast.LENGTH_SHORT).show()
+                    FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show()
                     true
                 }
                 R.id.idAboutUs_Drawer -> {
-                    Toast.makeText(this@MainActivity,"About Us",Toast.LENGTH_SHORT).show()
+                    FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_SHORT,FancyToast.ERROR,false).show()
+                    true
+                }
+                R.id.idSyllbus_Drawer -> {
+                    FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_SHORT,FancyToast.CONFUSING,false).show()
+                    true
+                }
+                R.id.idShareApp_Drawer -> {
+                    FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_SHORT,FancyToast.DEFAULT,false).show()
                     true
                 }
                 else->false
@@ -116,5 +120,8 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onBackPressed()
         }
+        if (supportFragmentManager.backStackEntryCount > 1) {
+            supportFragmentManager.popBackStack()
+        } else finishAffinity()
     }
 }

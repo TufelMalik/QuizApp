@@ -1,16 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.HomeFragment">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_margin="20dp"
-        android:layout_height="500dp"
-        android:layout_gravity="center"
-        android:background="@drawable/learn_coding2"
-        />
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_margin="18dp"
+                    app:iss_auto_cycle="true"
+                    app:iss_corner_radius="24"
+                    app:iss_delay="@integer/material_motion_duration_long_2"
+                    app:iss_period="2000"
+                    app:iss_selected_dot="@drawable/ic_selected_dot"
+                    app:iss_text_align="CENTER"
+                    app:iss_unselected_dot="@drawable/ic_unselected_dot"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etSearchNotesHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="16dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/corner"
+                    android:backgroundTint="#D1CECE"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:hint="@string/search_notes"
+                    android:inputType="text"
+                    android:paddingStart="10dp"
+                    android:textColorHint="@color/Gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.312"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_slider"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="470dp"
+                    android:layout_margin="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etSearchNotesHome" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

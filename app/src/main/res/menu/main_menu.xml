@@ -5,19 +5,19 @@
     <item
         android:id="@+id/idHome_menu"
         android:icon="@drawable/ic_home"
-        android:title="Home"
+        android:title="@string/home"
         />
 
     <item
         android:id="@+id/idLeaderBorad_menu"
         android:icon="@drawable/ic_leaderboard"
-        android:title="LeaderBoead"
+        android:title="@string/leader_board"
         />
 
     <item
         android:id="@+id/idProfile_menu"
         android:icon="@drawable/ic_person"
-        android:title="Profile"
+        android:title="@string/profile"
         />
 
 
