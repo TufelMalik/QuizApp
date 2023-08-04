@@ -118,6 +118,7 @@ class MainActivity : AppCompatActivity() {
         if (this.binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             this.binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
+            finishAffinity()
             super.onBackPressed()
         }
         if (supportFragmentManager.backStackEntryCount > 1) {

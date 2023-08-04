@@ -20,6 +20,9 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(Intent(this@LoginActivity, MainActivity::class.java))
             }
 
+            binding.txtGotoReg.setOnClickListener{
+                startActivity(Intent(this@LoginActivity, RegistationActivity::class.java))
+            }
 
 
 
